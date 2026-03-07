@@ -1,7 +1,7 @@
 # 📊 Prometheus – Monitoring & Alerting Tool
 
 <p align="center">
-<img src="https://prometheus.io/assets/prometheus_logo_grey.png" width="150">
+<img src="https://skillicons.dev/icons?i=prometheus" width="120">
 </p>
 
 <p align="center">
