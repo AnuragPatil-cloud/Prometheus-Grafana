@@ -251,3 +251,207 @@ Alertmanager handles:
 **Prometheus is an open-source monitoring and alerting toolkit that collects metrics from targets, stores them in a time-series database, and allows querying with PromQL, with integration for alerting and visualization in DevOps environments.**
 
 ---
+# 📈 Grafana – Visualization & Monitoring Dashboard
+
+<p align="center">
+<img src="https://skillicons.dev/icons?i=grafana" width="120">
+</p>
+
+<p align="center">
+
+![Grafana](https://img.shields.io/badge/Grafana-Monitoring-orange?logo=grafana)
+![DevOps](https://img.shields.io/badge/DevOps-Observability-blue)
+![Dashboards](https://img.shields.io/badge/Dashboards-Visualization-green)
+![Metrics](https://img.shields.io/badge/Metrics-Alerting-red)
+
+</p>
+
+---
+
+# 📌 What is Grafana?
+
+Grafana is an **open-source analytics and monitoring platform** used to:
+
+- Visualize metrics from multiple data sources (Prometheus, InfluxDB, Elasticsearch, CloudWatch, etc.)
+- Create interactive dashboards
+- Set up alerts on specific metrics
+- Track application, server, and infrastructure performance
+
+It is widely used in DevOps for **observability and monitoring**.
+
+---
+
+# 🚀 Why Grafana is Used
+
+Manual monitoring lacks visibility and centralization. Grafana provides:
+
+- Centralized dashboards for metrics
+- Real-time visualization of system and application data
+- Integration with Prometheus, Loki, and other data sources
+- Alerting for threshold breaches
+- Customizable, interactive dashboards
+
+Benefits:
+
+- Open-source and extensible
+- Supports multiple data sources
+- Real-time monitoring
+- Powerful visualizations
+- Alerts & notifications
+
+---
+
+# 🏗 Grafana Architecture
+
+```
++-------------------+
+| Data Sources       |
+| Prometheus, Loki,  |
+| InfluxDB, Cloud    |
+| Monitoring         |
++---------+---------+
+          │ Query Metrics
+          ▼
++---------+---------+
+|    Grafana        |
+|    Dashboard      |
+|    Visualization  |
++---------+---------+
+          │
+          ▼
++---------+---------+
+| Alerts & Notification |
+| Slack, Email, Webhook |
++----------------------+
+```
+
+Components:
+
+- **Data Sources** – Prometheus, InfluxDB, ElasticSearch, MySQL, CloudWatch
+- **Grafana Server** – Runs dashboards & queries
+- **Dashboards** – Visualization panels
+- **Alerting** – Send notifications when metrics breach thresholds
+
+---
+
+# ⚡ Installation (Ubuntu)
+
+Add Grafana repository:
+
+```bash
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install grafana
+```
+
+Start Grafana:
+
+```bash
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server
+```
+
+Access UI:
+
+```
+http://localhost:3000
+```
+
+Default login:
+
+- Username: `admin`
+- Password: `admin`
+
+---
+
+# 📂 Adding Data Sources
+
+Steps:
+
+1. Open Grafana web UI
+2. Go to **Configuration → Data Sources**
+3. Click **Add data source**
+4. Select type (e.g., Prometheus)
+5. Configure URL (e.g., `http://localhost:9090`)
+6. Save & Test
+
+---
+
+# 📊 Creating Dashboards
+
+1. Go to **Dashboard → New Dashboard**
+2. Add **Panels**
+3. Choose **Visualization** (Graph, Gauge, Table, etc.)
+4. Select **Metric query** from data source
+5. Customize panel with labels, thresholds, and units
+6. Save dashboard
+
+---
+
+# 🧩 Panels & Visualizations
+
+| Panel Type | Use Case |
+|------------|----------|
+| Graph | Time-series metrics |
+| Gauge | Single-value metrics with thresholds |
+| Table | Tabular data visualization |
+| Heatmap | Density or frequency analysis |
+| Stat | Highlight single metric value |
+| Logs | Visualize logs from Loki or ElasticSearch |
+
+---
+
+# 🔔 Alerting in Grafana
+
+1. Configure alert rules for panels
+2. Set **conditions** (e.g., CPU > 80%)
+3. Define **notification channels** (Slack, Email, Webhook)
+4. Receive real-time alerts
+
+Example alert condition:
+
+```
+WHEN avg() OF query(A, 5m, now) IS ABOVE 80
+```
+
+---
+
+# 🌿 Integration with Prometheus
+
+- Prometheus collects metrics
+- Grafana queries Prometheus using PromQL
+- Dashboards visualize metrics in real-time
+- Alerts can be triggered from Prometheus or Grafana
+
+---
+
+# 🧰 Grafana Use Cases in DevOps
+
+- Monitor Kubernetes cluster (CPU, memory, pods)
+- Visualize Docker container metrics
+- Track application performance
+- Monitor cloud resources (AWS, Azure, GCP)
+- Set up automated alerts for incidents
+- Build dashboards for CI/CD pipelines
+
+---
+
+# 🌟 Grafana Best Practices
+
+- Group dashboards by service or application
+- Use variables for dynamic dashboards
+- Use panels wisely for meaningful visualization
+- Secure Grafana UI with authentication & roles
+- Integrate with Prometheus for metrics and Loki for logs
+- Use alerting to reduce downtime and incidents
+
+---
+
+# 🎯 Interview Definition
+
+**Grafana is an open-source visualization and monitoring platform that allows DevOps engineers to create interactive dashboards, visualize metrics from multiple data sources, and set up alerts for monitoring applications, infrastructure, and cloud resources.**
+
+---
+
